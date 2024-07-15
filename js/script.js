@@ -2,7 +2,6 @@
 
 // Imagem 1
 const imagem1 = document.getElementById("lampada-01");
-const imagem2 = document.getElementById("lampada-2")
 imagem1.addEventListener("click", function () {
   console.log(imagem1.src);
   if (imagem1.src.endsWith("lampada.jpg")) {
@@ -14,12 +13,11 @@ imagem1.addEventListener("click", function () {
 
 // Imagem 2
 
-document.getElementById("lampada-2").onmouseover = function() {acender()};
+const imagem2 = document.getElementById("lampada-2");
+imagem2.addEventListener("mouseover", function () {
+  imagem2.src = "img/lampada-on.jpg";
+});
 
-function acender(){
-  if (imagem2.src.endsWith("lampada.jpg")) {
-    imagem2.src = "img/lampada-on.jpg";
-  } else {
-    imagem2.src = "img/lampada.jpg";
-  }
-}
+imagem2.addEventListener("mouseout", function () {
+  imagem2.src = "img/lampada.jpg";
+});
